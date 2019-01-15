@@ -23,6 +23,9 @@ public class BannerViewPager extends ViewPager {
             if (getCurrentItem() == 0 && getChildCount() == 0) {
                 return false;
             }
+            if (getAdapter() != null && getAdapter().getCount() <= 0) {
+                return false;
+            }
             return super.onTouchEvent(ev);
         } else {
             return false;
